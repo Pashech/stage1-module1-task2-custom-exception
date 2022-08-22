@@ -17,8 +17,13 @@ public class StudentManager {
     StudentManager manager = new StudentManager();
 
     for (int i = 0; i < IDs.length; i++) {
+      try{
         Student student = manager.find(IDs[i]);
-      System.out.println("Student name " + student.getName());
+        System.out.println("Student name " + student.getName());
+      }catch (StudentException ex){
+        ex.printStackTrace();
+      }
+
     }
 
   }
